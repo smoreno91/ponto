@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Slug:</strong>
+  <%= @company.slug %>
+</p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @company.is_active %>
+</p>
+
+<p>
+  <strong>Business name:</strong>
+  <%= @company.business_name %>
+</p>
+
+<p>
+  <strong>Comercial name:</strong>
+  <%= @company.comercial_name %>
+</p>
+
+<p>
+  <strong>Identification:</strong>
+  <%= @company.identification %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @company.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @company.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @company.state %>
+</p>
+
+<p>
+  <strong>Holidays:</strong>
+  <%= @company.holidays %>
+</p>
+
+<p>
+  <strong>Business days:</strong>
+  <%= @company.business_days %>
+</p>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

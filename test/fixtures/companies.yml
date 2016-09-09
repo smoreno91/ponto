@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slug: MyString
+  is_active: false
+  business_name: MyString
+  comercial_name: MyString
+  identification: MyString
+  address: MyText
+  city: MyString
+  state: MyString
+  holidays: MyText
+  business_days: MyText
+
+two:
+  slug: MyString
+  is_active: false
+  business_name: MyString
+  comercial_name: MyString
+  identification: MyString
+  address: MyText
+  city: MyString
+  state: MyString
+  holidays: MyText
+  business_days: MyText
