@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Is active:</strong>
+  <%= @employee.is_active %>
+</p>
+
+<p>
+  <strong>Identification:</strong>
+  <%= @employee.identification %>
+</p>
+
+<p>
+  <strong>Identification type:</strong>
+  <%= @employee.identification_type %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @employee.birth_date %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @employee.balance %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %> |
+<%= link_to 'Back', employees_path %>
