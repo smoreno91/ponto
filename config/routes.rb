@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :entries
   devise_for :employees
   root to: "application#index"
   resources :companies

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160909202239) do
+ActiveRecord::Schema.define(version: 20160912154905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,16 @@ ActiveRecord::Schema.define(version: 20160909202239) do
     t.index ["employee_id", "role_id"], name: "index_employees_roles_on_employee_id_and_role_id", using: :btree
   end
 
+  create_table "entries", force: :cascade do |t|
+    t.integer  "employee_id"
+    t.datetime "time"
+    t.integer  "status"
+    t.text     "obs"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["employee_id"], name: "index_entries_on_employee_id", using: :btree
+  end
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -89,4 +99,5 @@ ActiveRecord::Schema.define(version: 20160909202239) do
   end
 
   add_foreign_key "employees", "companies"
+  add_foreign_key "entries", "employees"
 end

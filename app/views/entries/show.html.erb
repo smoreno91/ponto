@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @entry.employee_id %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @entry.time %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @entry.status %>
+</p>
+
+<p>
+  <strong>Obs:</strong>
+  <%= @entry.obs %>
+</p>
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>

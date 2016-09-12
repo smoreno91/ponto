@@ -1,6 +1,7 @@
 class Employee < ApplicationRecord
   rolify
-  belongs_to :company
+  belongs_to  :company
+  has_many    :entries
   
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
