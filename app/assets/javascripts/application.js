@@ -216,6 +216,7 @@ $(function() {
   }
 
   //LINE CHART WITH AREA IN SIDEBAR
+  /*if($("#ct2-chart")){
     new Chartist.Line('#ct2-chart', {
         labels: [1, 2, 3, 4, 5, 6, 7, 8],
         series: [
@@ -225,6 +226,7 @@ $(function() {
         low: 0,
         showArea: true
     });
+  }*/
     
   //Trending chart for small screen
   if(window_width <= 480){    
@@ -232,6 +234,38 @@ $(function() {
       height: '200'
     });
   }
+  
+  $.validator.setDefaults({
+    errorClass: "invalid",
+    validClass: "valid",
+    errorPlacement: function (error, element) {
+      $(element).closest("form").find("label[for='" + element.attr("id") + "']").attr('data-error', error.text());
+    }
+  });
+  
+  $("#new_user").validate({
+    rules: {
+      user: {
+        email: {
+          required: true
+        },
+        password: {
+          required: true  
+        }
+      },
+    },  
+    //For custom messages
+    /*messages: {
+      user: {
+        email: {
+          required: "Enter the email",
+        },
+        password: {
+          required: "Enter the password",
+        }
+      }
+    }*/
+  });
 
 
 }); // end of document ready

@@ -13,6 +13,29 @@
 /*----------------------------------------
   General Layout Style
 ------------------------------------------*/
+html.page-center {
+  display: table;
+  margin: auto;
+  height: 100%;
+}
+body.page-center {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.input-field .prefix {
+  margin-top: 6px;
+}
+label:after {
+    transition-property: all !important;
+    font-size: 0.8rem;
+    transform: none;
+}
+label:not(.active):after {
+    transform: translateY(-140%);
+}
+
 body {
   background-color: #fcfcfc;
 }
@@ -235,7 +258,7 @@ li.li-hover:hover{
   top: 0;
   width: 51%;
   height: 100%;
-  background: #222222;
+  background: #eceff1;
   z-index: 1000;
   -webkit-transform: translateX(0);
   /* Chrome, Opera 15+, Safari 3.1+ */
@@ -1149,22 +1172,18 @@ tr.group:hover {
     Login Page
 ------------------------------------------*/
 
-.login-form {
+.form-card {
   width: 280px;  
 }
-.login-form-text{
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.8rem;
-}
-.profile-image-login{
+.form-card-logo {
   width: 100px;
   height: 100px !important;
 }
-
-.login-text {
-  margin-top: -6px;
-  margin-left: -6px !important;
+.form-card-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.64rem;
+  margin: 0.82rem 0 0.656rem 0;
 }
 /*----------------------------------------
     Error Page

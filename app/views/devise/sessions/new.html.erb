@@ -1,26 +1,44 @@
-<h2>Log in</h2>
+<% content_for :html_class, "page-center" %>
+<% content_for :body_class, "page-center" %>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="col s12 z-depth-4 card-panel">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html:{ class: "form-card"}) do |f| %>
+  
+    <div class="row margin">
+      <div class="input-field col s12 center">
+        <img src="assets/login-logo.png" alt="" class="circle responsive-img valign form-card-logo">
+        <h1 class="center form-card-title">Log in</h1>
+      </div>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+    <div class="row margin">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">person_outline</i>
+        <%= f.email_field :email, required: "required", aria: {required: true}, class: "validate" %>
+        <%= f.label :email %>
+      </div>
+    </div>
+    <div class="row margin">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">lock_outline</i>
+        <%= f.password_field :password, required: "required", aria: {required: true}, autocomplete: "off", class: 'validate' %>
+        <%= f.label :password %>
+      </div>
+    </div>
+    <% if devise_mapping.rememberable? -%>
+      <div class="row">          
+        <div class="input-field col s12">
+          <%= f.check_box :remember_me %>
+          <%= f.label :remember_me %>
+        </div>
+      </div>
+    <% end -%>
+    <div class="row">
+      <div class="input-field col s12">
+        <%= f.submit "Log in", class: "btn waves-effect waves-light col s12" %>
+      </div>
+    </div>
+    
+    <%= render "devise/shared/links" %>
+    
+  <% end %>
+</div>
