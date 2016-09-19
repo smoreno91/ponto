@@ -8,12 +8,24 @@
 				</div>
 				<div class="col col s8 m8 l8">
 					<ul id="profile-dropdown" class="dropdown-content">
-						<li><a href="#"><i class="material-icons">face</i> Profile</a></li>
-						<li><a href="#"><i class="material-icons">settings</i> Settings</a></li>
-						<li><a href="#"><i class="material-icons">help</i> Help</a></li>
+						<li>
+							<a href="#"><i class="material-icons">face</i>Profile</a>
+						</li>
+						<li>
+							<a href="#"><i class="material-icons">settings</i>Settings</a>
+						</li>
+						<li>
+							<a href="#"><i class="material-icons">help</i>Help</a>
+						</li>
 						<li class="divider"></li>
-						<li><a href="#"><i class="material-icons">lock</i> Lock</a></li>
-						<li><a href="#"><i class="material-icons">keyboard_tab</i> Logout</a></li>
+						<li>
+							<a href="#"><i class="material-icons">lock</i>Lock</a>
+						</li>
+						<li>
+							<%= link_to destroy_user_session_path, :method => :delete do %>
+  								<i class="material-icons">keyboard_tab</i>Logout
+							<% end %>
+						</li>
 					</ul>
 					<a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">John Doe<i class="material-icons right">arrow_drop_down</i></a>
 					<p class="user-roal">Administrator</p>

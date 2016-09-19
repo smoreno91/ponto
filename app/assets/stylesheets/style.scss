@@ -398,7 +398,7 @@ ul.side-nav.fixed hr {
   height: auto;
 }
 #slide-out li a i {
-  line-height: inherit;
+  /*line-height: inherit;*/
   width: 2rem;
   font-size: 1.6rem;
   display: block;
@@ -449,6 +449,7 @@ ul.side-nav.fixed li.active {
 ul.side-nav.fixed li a {
   font-size: 14px;
   font-weight: 400;
+  line-height: 48px;
 }
 .side-nav .collapsible-body li a{
     margin: 0 1rem 0 3rem;
