@@ -224,7 +224,7 @@ $(function() {
     }
   });
   
-  $("#new_user").validate({
+  $(".form-card").validate({
     rules: {
       user: {
         email: {
