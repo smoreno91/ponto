@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="es" class="<%= yield (:html_class) %>">
 	<head>
-		<title>Ponto</title>
+		
+		<title><%= content_for?(:title) ? yield(:title) : "Ponto" %></title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-		<title><%= content_for?(:title) ? yield(:title) : "Ponto" %></title>
 	
 		<%= stylesheet_link_tag "application" %>
 		<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
@@ -21,7 +20,7 @@
 		</div>
 		<!-- End Page Loading -->
 		
-		<% if user_signed_in? %>
+		<% if user_signed_in? && !(current_page?(user_confirmation_path) || current_page?(new_user_confirmation_path)) %>
 
 			<%= render "header" %>
 	
@@ -55,9 +54,6 @@
 						<div class="container">
 							<div class="section">
 								
-								<p class="caption">A Simple Blank Page to use it for your custome design and elements.</p>
-								<div class="divider"></div>
-								
 								<%= yield %>
 								
 							</div>
@@ -75,6 +71,7 @@
 			<!-- END MAIN -->
 	
 			<%= render "footer" %>
+			
 		<% else %>
 			
 			<%= yield %>
