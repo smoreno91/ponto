@@ -27,6 +27,8 @@
 @user.save
 
 @employee = Employee.new(
+    :names => "Santiago",
+    :lastnames => "Moreno Palacio",
     :identification => "1152438883",
     :birth_date => Date.new(1991, 8, 1)
     )
