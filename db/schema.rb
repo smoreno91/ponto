@@ -17,30 +17,30 @@ ActiveRecord::Schema.define(version: 20160912174012) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "slug"
-    t.boolean  "is_active"
+    t.boolean  "is_active",      default: true, null: false
     t.string   "business_name"
     t.string   "comercial_name"
     t.string   "identification"
     t.text     "address"
     t.string   "city"
     t.string   "state"
-    t.text     "holidays"
-    t.text     "business_days"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.json     "holidays",       default: "{}"
+    t.json     "business_days",  default: "{}"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.index ["slug"], name: "index_companies_on_slug", unique: true, using: :btree
   end
 
   create_table "employees", force: :cascade do |t|
     t.integer  "company_id"
     t.integer  "user_id"
-    t.boolean  "is_active"
+    t.boolean  "is_active",           default: true, null: false
     t.string   "identification"
     t.integer  "identification_type"
     t.date     "birth_date"
-    t.float    "balance"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.float    "balance",             default: 0.0
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.index ["company_id"], name: "index_employees_on_company_id", using: :btree
     t.index ["user_id"], name: "index_employees_on_user_id", using: :btree
   end
@@ -105,7 +105,5 @@ ActiveRecord::Schema.define(version: 20160912174012) do
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
   end
 
-  add_foreign_key "employees", "companies"
-  add_foreign_key "employees", "users"
   add_foreign_key "entries", "employees"
 end

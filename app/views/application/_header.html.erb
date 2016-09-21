@@ -5,7 +5,9 @@
 		<nav class="cyan">
 			<div class="nav-wrapper">
 				<h1 class="logo-wrapper">
-					<a href="/" class="brand-logo darken-1"><img src="assets/materialize-logo.png" alt="materialize logo"></a>
+					<%= link_to root_path, class: "brand-logo darken-1" do %>
+						<%= image_tag "logo.png", alt: "", class: "logo" %>
+					<% end %>
 					<span class="logo-text">Ponto</span>
 				</h1>
 				<ul class="right hide-on-med-and-down">
