@@ -12,8 +12,14 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<%= csrf_meta_tags %>
+		
+		<!-- Favicons -->
 		<%= favicon_link_tag 'favicons/favicon.png' %>
+		<!-- For iPhone -->
 		<%= favicon_link_tag 'favicons/apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
+		<!-- For Windows Phone -->
+		<meta name="msapplication-TileColor" content="#00bcd4">
+		<meta name="msapplication-TileImage" content="assets/favicons/mstile.png">
 	
 		<%= stylesheet_link_tag "application" %>
 		<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
