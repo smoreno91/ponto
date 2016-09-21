@@ -364,7 +364,6 @@ li.search-out:hover{
 /*----------------------------------------
     Sidebar Main Menu 
 ------------------------------------------*/
-
 ul.side-nav.fixed {
   top: 64px;
 }
@@ -389,7 +388,6 @@ ul.side-nav.fixed hr {
   height: auto;
 }
 #slide-out li a i {
-  /*line-height: inherit;*/
   width: 2rem;
   font-size: 1.6rem;
   display: block;
@@ -397,6 +395,22 @@ ul.side-nav.fixed hr {
   text-align: center;
   margin-right: 1rem;
 }
+
+.collapsible-header.active:after {
+  content: "keyboard_arrow_down";
+  color: #00bcd4;
+}
+.collapsible-header:after {
+  font-family: "Material Icons";
+  content: "keyboard_arrow_right";
+  color: rgba(0, 0, 0, 0.54);
+  width: 2rem;
+  font-size: 1.6rem;
+  float: right;
+  text-align: center;
+  margin: 0;
+}
+
 #slide-out ul.side-nav li {
   padding: 0px !important;
 }
@@ -424,7 +438,7 @@ ul.side-nav .collapsible-header {
 }
 @media only screen and (min-width: 601px) {
   .sidebar-collapse {
-    top: -52px;
+    top: -54px;
   }
 }
 ul.side-nav.fixed {
@@ -442,24 +456,28 @@ ul.side-nav.fixed li a {
   font-weight: 400;
   line-height: 48px;
 }
-.side-nav .collapsible-body li a{
-    margin: 0 1rem 0 3rem;
+ul.side-nav.fixed li.active > a,
+ul.side-nav.fixed li.active > a i {
+  color: #00bcd4;
+}
+.side-nav .collapsible-body li a,
+.side-nav.fixed .collapsible-body li a {
+  margin: 0 1rem 0 3rem;
+  padding: 0 23.5px 0 0px;
 }
 ul.side-nav.fixed ul.collapsible-accordion {
   background-color: #FFF;
 }
-ul.side-nav.fixed:hover {
-  /*overflow-y:hidden;*/
+ul.side-nav.fixed ul.collapsible-accordion .collapsible-header i:nth-child(2){
+  float: right !important;
+  margin: 0 !important;
 }
 ul.side-nav.fixed li.user-details {
-  background: url(../assets/user-bg.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  /*overflow: hidden;*/
-  
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   padding: 15px 0px 0px 15px;
 }
 .user-details .row {
@@ -471,9 +489,6 @@ ul.side-nav.fixed li.user-details {
   font-size: 13px;
   color: #fff;
 }
-ul.side-nav.fixed .profile-image {
-  /*height: 50px;*/
-}
 ul.side-nav.fixed .profile-btn {
   margin: 0;
   text-transform: capitalize;
@@ -481,14 +496,14 @@ ul.side-nav.fixed .profile-btn {
   text-shadow: 1px 1px 1px #444;
   font-size: 15px;
 }
+ul.side-nav.fixed .profile-btn i {
+  margin: 0 !important;
+}
 .user-roal {
   color: #fff;
   margin-top: -16px;
   font-size: 13px;
   text-shadow: 1px 1px 1px #444;
-}
-.bold > a {
-  font-weight: bold;
 }
 nav.top-nav {
   height: 122px;

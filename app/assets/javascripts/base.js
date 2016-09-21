@@ -11,10 +11,6 @@ $(function() {
     }, 200);
   });  
   
-  $('.show-search').click(function() {
-    $('.search-out').fadeToggle( "50", "linear" );
-  });
-
   // Check first if any of the task is checked
   $('#task-card input:checkbox').each(function() {
     checkbox_check(this);
@@ -196,26 +192,6 @@ $(function() {
     })
   }
 
-  //LINE CHART WITH AREA IN SIDEBAR
-  /*if($("#ct2-chart")){
-    new Chartist.Line('#ct2-chart', {
-        labels: [1, 2, 3, 4, 5, 6, 7, 8],
-        series: [
-            [5, 9, 7, 8, 5, 3, 5, 4]
-        ]
-    }, {
-        low: 0,
-        showArea: true
-    });
-  }*/
-    
-  //Trending chart for small screen
-  if(window_width <= 480){    
-    $("#trending-line-chart").attr({
-      height: '200'
-    });
-  }
-  
   $.validator.setDefaults({
     errorClass: "invalid",
     validClass: "valid",
