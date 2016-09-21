@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160912174012) do
     t.integer  "user_id"
     t.boolean  "is_active",           default: true, null: false
     t.string   "identification"
-    t.integer  "identification_type"
+    t.integer  "identification_type", default: 1
     t.date     "birth_date"
     t.float    "balance",             default: 0.0
     t.datetime "created_at",                         null: false
@@ -105,5 +105,7 @@ ActiveRecord::Schema.define(version: 20160912174012) do
     t.index ["user_id", "role_id"], name: "index_users_roles_on_user_id_and_role_id", using: :btree
   end
 
+  add_foreign_key "employees", "companies"
+  add_foreign_key "employees", "users"
   add_foreign_key "entries", "employees"
 end

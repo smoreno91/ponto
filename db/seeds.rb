@@ -26,7 +26,18 @@
 @user.add_role "admin"
 @user.save
 
-@employee = Employee.new()
-@employee.company_id = @company.id
-@employee.user_id = @user.id
+@employee = Employee.new(
+    :identification => "1152438883",
+    :birth_date => Date.new(1991, 8, 1)
+    )
+@employee.company = @company
+@employee.user = @user
 @employee.save
+
+@entry = Entry.new(
+    :time => DateTime.now,
+    :status => 1,
+    :obs => "example"
+    )
+@entry.employee_id = @employee.id
+@entry.save
