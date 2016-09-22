@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_one :employee
+  belongs_to  :company
+  has_many    :entries
   rolify
   # Include default devise modules. Others available are:
   # :registerable, :confirmable, :lockable, :timeoutable and :omniauthable

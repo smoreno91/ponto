@@ -17,7 +17,7 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create entry" do
     assert_difference('Entry.count') do
-      post entries_url, params: { entry: { employee_id: @entry.employee_id, obs: @entry.obs, status: @entry.status, time: @entry.time } }
+      post entries_url, params: { entry: { user_id: @entry.user_id, obs: @entry.obs, status: @entry.status, time: @entry.time } }
     end
 
     assert_redirected_to entry_url(Entry.last)
@@ -34,7 +34,7 @@ class EntriesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update entry" do
-    patch entry_url(@entry), params: { entry: { employee_id: @entry.employee_id, obs: @entry.obs, status: @entry.status, time: @entry.time } }
+    patch entry_url(@entry), params: { entry: { user_id: @entry.user_id, obs: @entry.obs, status: @entry.status, time: @entry.time } }
     assert_redirected_to entry_url(@entry)
   end
 

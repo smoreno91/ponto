@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Employee</th>
+      <th>User</th>
       <th>Time</th>
       <th>Status</th>
       <th>Obs</th>
@@ -16,7 +16,7 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
-        <td><%= entry.employee_id %></td>
+        <td><%= entry.user_id %></td>
         <td><%= entry.time %></td>
         <td><%= entry.status %></td>
         <td><%= entry.obs %></td>

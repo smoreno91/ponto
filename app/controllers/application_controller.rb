@@ -16,13 +16,13 @@ class ApplicationController < ActionController::Base
   end
   
   def check
-    @company = Company.friendly.find(params[:slug])
-    logger.debug "============"
-    logger.debug "============"
-    logger.debug params[:slug]
-    logger.debug "Company attributes hash: #{@company.inspect}"
-    logger.debug "============"
-    logger.debug "============"
+    #@company = Company.friendly.find(params[:slug])
+    #logger.debug "============"
+    #logger.debug "============"
+    #logger.debug params[:slug]
+    #logger.debug "Company attributes hash: #{@company.inspect}"
+    #logger.debug "============"
+    #logger.debug "============"
   end
   
   private

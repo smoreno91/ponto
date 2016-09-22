@@ -1,7 +1,7 @@
 class Company < ApplicationRecord
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged
-  has_many :employees
+  has_many :users
 
   def slug_candidates
     [
