@@ -1,0 +1,81 @@
+<% page_center %>
+
+<div class="col s12 z-depth-4 card-panel">
+    
+    <%= form_tag('/url', html: { class: "form-card"}) do -%>
+  
+        <div class="row margin">
+            <div class="input-field col s12 center">
+                <%= image_tag "form-card-logo.png", alt: "", class: "circle responsive-img valign form-card-logo" %>
+                <h1 class="center form-card-title">New Company</h1>
+            </div>
+        </div>
+        
+        <%= render "devise/shared/messages" %>
+        
+        <div class="row margin">
+            <div class="input-field col s6">
+                <%= text_field_tag :business_name, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :business_name %>
+            </div>
+            <div class="input-field col s6">
+                <%= text_field_tag :comercial_name, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :comercial_name %>
+            </div>
+        </div>
+        
+        <div class="row margin">
+            <div class="input-field col s6">
+                <%= text_field_tag :identification, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :identification %>
+            </div>
+            <div class="input-field col s6">
+                <%= text_field_tag :address, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :address %>
+            </div>
+        </div>
+
+        <div class="row margin">
+            <div class="input-field col s6">
+                <%= text_field_tag :city, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :city %>
+            </div>
+            <div class="input-field col s6">
+                <%= text_field_tag :state, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :state %>
+            </div>
+        </div>
+        
+        <div class="row margin">
+            <div class="input-field col s6">
+                <%= email_field_tag :email, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :email %>
+            </div>
+            <div class="input-field col s6">
+                <%= password_field_tag :password, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :password %>
+            </div>
+        </div>
+        
+        <div class="row margin">
+            <div class="input-field col s6">
+                <%= text_field_tag :user_identification, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :user_identification %>
+            </div>
+            <div class="input-field col s6">
+                <%= date_field_tag :birth_date, nil, required: "required", aria: {required: true}, class: "datepicker validate" %>
+                <%= label_tag :birth_date %>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <%= submit_tag "Save", class: "btn waves-effect waves-light col s12" %>
+            </div>
+        </div>
+        
+        
+    
+    <% end %>
+</div>

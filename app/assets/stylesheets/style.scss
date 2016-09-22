@@ -580,19 +580,18 @@ nav.top-nav a.page-title {
 /*----------------------------------------
     Breadcrumb
 ------------------------------------------*/
-#breadcrumbs-nav {
+#page-nav {
   height: auto;
 }
-.breadcrumbs-title {
+.page-title {
   font-size: 1.5rem;
-  line-height: 1.804rem;
   margin: 0px;
   padding: 1rem 0 0;
   color: black;
 }
 @media only screen and (max-width: 992px){
-  .breadcrumbs-title {
-       padding: 1rem 0;
+  .page-title {
+    padding: 1rem 0;
   }
 }
 .breadcrumb,
@@ -600,7 +599,6 @@ nav.top-nav a.page-title {
   color: #00bcd4;
 }
 .breadcrumb:last-child {
-  font-weight: normal;
   color: #999;
 }
 /*----------------------------------------

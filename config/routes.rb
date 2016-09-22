@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  root to: "application#index"
+  root to: "application#home"
   
   get '/dashboard', to: 'application#dashboard', as: :dashboard
+  get '/company_registration', to: 'application#company_registration', as: :company_registration
   
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
   

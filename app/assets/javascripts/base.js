@@ -88,17 +88,20 @@ $(function() {
   // Pikadate datepicker
   $('.datepicker').pickadate({
     selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
+    selectYears: true, // Creates a dropdown of 15 years to control year
+    format: 'yyyy/mm/dd',
+    formatSubmit: 'yyyy/mm/dd',
+    min: new Date(1900, 1, 1)
   });
 
   // Perfect Scrollbar
   $('select').not('.disabled').material_select();
-    var leftnav = $(".page-topbar").height();  
-    var leftnavHeight = window.innerHeight - leftnav;
+  var leftnav = $(".page-topbar").height();  
+  var leftnavHeight = window.innerHeight - leftnav;
   $('.leftside-navigation').height(leftnavHeight).perfectScrollbar({
     suppressScrollX: true
   });
-    var righttnav = $("#chat-out").height();
+  var righttnav = $("#chat-out").height();
   $('.rightside-navigation').height(righttnav).perfectScrollbar({
     suppressScrollX: true
   });

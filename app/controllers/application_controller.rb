@@ -1,11 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_filter :authenticate_user!, :only => :dashboard
+  before_filter :authenticate_user!, :only  => :dashboard
+  before_filter :non_authenticate_user!, :except  => :dashboard
 
-  def index
-    if user_signed_in?
-      redirect_to dashboard_url
-    end
+  def home
+    
+  end
+  
+  def company_registration
+    
   end
 
   def dashboard
@@ -19,6 +22,12 @@ class ApplicationController < ActionController::Base
     end
   
   protected
+    def non_authenticate_user!
+      if user_signed_in?
+        redirect_to dashboard_url
+      end
+    end
+    
     def authenticate_user!
       if user_signed_in?
         super
