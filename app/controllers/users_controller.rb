@@ -4,11 +4,11 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.with_role(:admin)
+    @users = User.with_role(:employee)
   end
   
   def admins
-    @users = User.with_role(:employee)
+    @users = User.with_role(:admin)
   end
 
   # GET /users/1
@@ -105,6 +105,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:User).permit(:is_active, :identification, :identification_type, :birth_date, :balance)
+      params.require(:User).permit(:is_active, :names, :lastnames, :identification, :identification_type, :birth_date, :balance)
     end
 end

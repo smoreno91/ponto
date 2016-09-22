@@ -24,7 +24,7 @@
 		<%= stylesheet_link_tag "application" %>
 		<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
 	</head>
-	<body class="<%= yield (:body_class) %>">
+	<body class="<%= controller.action_name %> <%= yield (:body_class) %>">
 		<!-- Start Page Loading -->
 		<!--<div id="loader-wrapper">
 			<div id="loader"></div>        
