@@ -4,7 +4,11 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.with_role(:admin)
+  end
+  
+  def admins
+    @users = User.with_role(:employee)
   end
 
   # GET /users/1

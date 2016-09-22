@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
   
   resources :users
+  get '/admins',	to: 'users#admins', as: :admins
   put '/users/:id/activate/',	to: 'users#activate', as: :activate_user
   put '/users/:id/deactivate/',	to: 'users#deactivate', as: :deactivate_user
   

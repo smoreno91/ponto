@@ -40,25 +40,7 @@
 						<i class="material-icons">dashboard</i>Dashboard
 					<% end %>
 				</li>
-				<li>
-					<%= link_to "#", class: "collapsible-header waves-effect waves-cyan" do %>
-						<i class="material-icons">group</i>Users
-					<% end %>
-					<div class="collapsible-body">
-						<ul>
-							<li>
-								<%= link_to users_path do %>
-									<i class="material-icons">list</i>List
-								<% end %>
-							</li>
-							<li>
-								<%= link_to new_user_path do %>
-									<i class="material-icons">person_add</i>Add new
-								<% end %>
-							</li>
-						</ul>
-					</div>
-				</li>
+				
 				<li>
 					<%= link_to "#", class: "collapsible-header waves-effect waves-cyan" do %>
 						<i class="material-icons">domain</i>Company
@@ -78,6 +60,47 @@
 						</ul>
 					</div>
 				</li>
+				
+				<li>
+					<%= link_to "#", class: "collapsible-header waves-effect waves-cyan" do %>
+						<i class="material-icons">group</i>Employees
+					<% end %>
+					<div class="collapsible-body">
+						<ul>
+							<li>
+								<%= link_to users_path do %>
+									<i class="material-icons">list</i>List
+								<% end %>
+							</li>
+							<li>
+								<%= link_to new_user_path do %>
+									<i class="material-icons">person_add</i>Add new
+								<% end %>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
+				<li>
+					<%= link_to "#", class: "collapsible-header waves-effect waves-cyan" do %>
+						<i class="material-icons">contacts</i>Admins
+					<% end %>
+					<div class="collapsible-body">
+						<ul>
+							<li>
+								<%= link_to admins_path do %>
+									<i class="material-icons">list</i>List
+								<% end %>
+							</li>
+							<li>
+								<%= link_to new_user_path do %>
+									<i class="material-icons">person_add</i>Add new
+								<% end %>
+							</li>
+						</ul>
+					</div>
+				</li>
+				
 				<li>
 					<%= link_to "#", class: "collapsible-header waves-effect waves-cyan" do %>
 						<i class="material-icons">pie_chart</i>Reports
