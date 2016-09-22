@@ -33,7 +33,7 @@
 		</div>-->
 		<!-- End Page Loading -->
 		
-		<% if user_signed_in? && !(current_page?(user_confirmation_path) || current_page?(new_user_confirmation_path)) %>
+		<% if user_signed_in? && !(current_page?(user_confirmation_path) || current_page?(new_user_confirmation_path) || current_page?(check_path)) %>
 
 			<%= render "header" %>
 	

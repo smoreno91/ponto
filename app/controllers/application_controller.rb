@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, :only  => :dashboard
-  before_action :non_authenticate_user!, :only  => [:home, :company_registration, :check]
+  before_action :non_authenticate_user!, :only  => [:home, :company_registration]
 
   def home
     
@@ -16,7 +16,13 @@ class ApplicationController < ActionController::Base
   end
   
   def check
-    
+    @company = Company.friendly.find(params[:slug])
+    logger.debug "============"
+    logger.debug "============"
+    logger.debug params[:slug]
+    logger.debug "Company attributes hash: #{@company.inspect}"
+    logger.debug "============"
+    logger.debug "============"
   end
   
   private

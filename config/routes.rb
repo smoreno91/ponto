@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   
   get '/dashboard', to: 'application#dashboard', as: :dashboard
   get '/company_registration', to: 'application#company_registration', as: :company_registration
-  get '/check', to: 'application#check', as: :check
+  get '/:slug/check', to: 'application#check', as: :check
   
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
   

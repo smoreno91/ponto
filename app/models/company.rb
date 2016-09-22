@@ -5,8 +5,8 @@ class Company < ApplicationRecord
 
   def slug_candidates
     [
-      :business_name,
-      [:business_name, :city]
+      :comercial_name,
+      [:comercial_name, :city]
     ]
   end
 end
