@@ -1,0 +1,44 @@
+<% page_center %>
+
+<div class="col s12 z-depth-4 card-panel">
+    
+    <%= form_tag('/url', html: { class: "form-card"}) do -%>
+  
+        <div class="row margin">
+            <div class="input-field col s12 center">
+                <%= image_tag "form-card-logo.png", alt: "", class: "circle responsive-img valign form-card-logo" %>
+                <h1 class="center form-card-title">Check</h1>
+            </div>
+        </div>
+        
+        <%= render "devise/shared/messages" %>
+        
+        <div class="row margin">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">vpn_key</i>
+                <%= text_field_tag :identification, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :identification %>
+            </div>
+        </div>
+
+        <div class="row margin">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">lock_outline</i>
+                <%= password_field_tag :password, nil, required: "required", aria: {required: true}, class: "validate" %>
+                <%= label_tag :password %>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="input-field col s12">
+                <%= submit_tag "Save", class: "btn waves-effect waves-light col s12" %>
+            </div>
+        </div>
+        
+        <div class="row margin">
+            <div class="live-date"></div>
+            <div class="live-time"></div>
+        </div>
+        
+    <% end %>
+</div>

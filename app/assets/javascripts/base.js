@@ -34,6 +34,19 @@ $(function() {
   * Plugin initialization
   ------------------------*/
 
+  var liveDate = $('.live-date'),
+      liveTime = $('.live-time');
+  function startTime() {
+    liveDate.html(moment().format("MMMM D, YYYY"));
+    liveTime.html(moment().format("hh:mm:ss A"));
+    setTimeout(function () {
+      startTime()
+    }, 1000);
+  }
+  if(liveDate || liveTime){
+   startTime(); 
+  }
+
   // Materialize Slider
   $('.slider').slider({
     full_width: true
