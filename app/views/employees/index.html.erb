@@ -1,11 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Employees</h1>
-
 <table>
   <thead>
     <tr>
       <th>Is active</th>
+      <th>Names</th>
+      <th>Lastnames</th>
       <th>Identification</th>
       <th>Identification type</th>
       <th>Birth date</th>
@@ -17,14 +17,22 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= employee.is_active %></td>
+        <td><i class="material-icons"><%= employee.is_active ? "check" : "close" %></i></td>
+        <td><%= employee.names %></td>
+        <td><%= employee.lastnames %></td>
         <td><%= employee.identification %></td>
         <td><%= employee.identification_type %></td>
         <td><%= employee.birth_date %></td>
         <td><%= employee.balance %></td>
         <td><%= link_to 'Show', employee %></td>
         <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td>
+          <% if employee.is_active %>
+            <%= link_to 'Deactivate', deactivate_employee_path(employee), method: :put %>
+          <% else %>
+            <%= link_to 'Activate', activate_employee_path(employee), method: :put %>
+        <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -16,30 +16,62 @@
     )
 @company.save
 
-@user = User.new(
+
+# Santiago => admin
+@user1 = User.new(
     :email => 'smoreno91@gmail.com',
     :password => '1q2w3e4r',
     :password_confirmation => '1q2w3e4r'
     )
-@user.skip_confirmation!
-@user.save
-@user.add_role "admin"
-@user.save
+@user1.skip_confirmation!
+@user1.save
+@user1.add_role "admin"
+@user1.save
 
-@employee = Employee.new(
+@employee1 = Employee.new(
     :names => "Santiago",
     :lastnames => "Moreno Palacio",
     :identification => "1152438883",
     :birth_date => Date.new(1991, 8, 1)
     )
-@employee.company = @company
-@employee.user = @user
-@employee.save
+@employee1.company = @company
+@employee1.user = @user1
+@employee1.save
 
-@entry = Entry.new(
+@entry1 = Entry.new(
     :time => DateTime.now,
     :status => 1,
     :obs => "example"
     )
-@entry.employee_id = @employee.id
-@entry.save
+@entry1.employee = @employee1
+@entry1.save
+
+
+# Cesar => employee
+@user2 = User.new(
+    :email => 'cahz@gmail.com',
+    :password => '1q2w3e4r',
+    :password_confirmation => '1q2w3e4r'
+    )
+@user2.skip_confirmation!
+@user2.save
+@user2.add_role "employee"
+@user2.save
+
+@employee2 = Employee.new(
+    :names => "Cesar",
+    :lastnames => "Hurtado",
+    :identification => "123456789",
+    :birth_date => Date.new(1991, 4, 21)
+    )
+@employee2.company = @company
+@employee2.user = @user2
+@employee2.save
+
+@entry2 = Entry.new(
+    :time => DateTime.now,
+    :status => 1,
+    :obs => "example"
+    )
+@entry2.employee = @employee2
+@entry2.save

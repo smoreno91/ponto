@@ -26,11 +26,11 @@
 	</head>
 	<body class="<%= yield (:body_class) %>">
 		<!-- Start Page Loading -->
-		<div id="loader-wrapper">
+		<!--<div id="loader-wrapper">
 			<div id="loader"></div>        
 			<div class="loader-section section-left"></div>
 			<div class="loader-section section-right"></div>
-		</div>
+		</div>-->
 		<!-- End Page Loading -->
 		
 		<% if user_signed_in? && !(current_page?(user_confirmation_path) || current_page?(new_user_confirmation_path)) %>
@@ -81,7 +81,7 @@
 			</div>
 			<!-- END MAIN -->
 	
-			<%= render "footer" %>
+			<% render "footer" %>
 			
 		<% else %>
 			

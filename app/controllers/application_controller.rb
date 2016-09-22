@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_filter :authenticate_user!, :only  => :dashboard
-  before_filter :non_authenticate_user!, :except  => :dashboard
+  before_action :authenticate_user!, :only  => :dashboard
+  before_action :non_authenticate_user!, :only  => [:home, :company_registration, :check]
 
   def home
     
@@ -33,10 +33,10 @@ class ApplicationController < ActionController::Base
     end
     
     def authenticate_user!
-      if user_signed_in?
-        super
-      else
+      unless user_signed_in?
         redirect_to new_user_session_path, :notice => 'You have to log in first'
+      else
+        super
       end
     end
 end

@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20160912174012) do
     t.integer  "company_id"
     t.integer  "user_id"
     t.boolean  "is_active",           default: true, null: false
-    t.string   "name"
-    t.string   "lastname"
+    t.string   "names"
+    t.string   "lastnames"
     t.string   "identification"
     t.integer  "identification_type", default: 1
     t.date     "birth_date"
