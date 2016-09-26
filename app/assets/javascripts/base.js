@@ -11,25 +11,6 @@ $(function() {
     }, 200);
   });  
   
-  // Check first if any of the task is checked
-  $('#task-card input:checkbox').each(function() {
-    checkbox_check(this);
-  });
-
-  // Task check box
-  $('#task-card input:checkbox').change(function() {
-    checkbox_check(this);
-  });
-
-  // Check Uncheck function
-  function checkbox_check(el){
-      if (!$(el).is(':checked')) {
-          $(el).next().css('text-decoration', 'none'); // or addClass            
-      } else {
-          $(el).next().css('text-decoration', 'line-through'); //or addClass
-      }    
-  }
-
   /*----------------------
   * Plugin initialization
   ------------------------*/
@@ -47,11 +28,6 @@ $(function() {
    startTime(); 
   }
 
-  // Materialize Slider
-  $('.slider').slider({
-    full_width: true
-  });
-
   // Materialize Dropdown
   $('.dropdown-button').dropdown({
     inDuration: 300,
@@ -62,17 +38,6 @@ $(function() {
     gutter: 0, // Spacing from edge
     belowOrigin: true // Displays dropdown below the button
   });
-
-  // Materialize Tabs
-  $('.tab-demo').show().tabs();
-  $('.tab-demo-active').show().tabs();
-
-  // Materialize Parallax
-  $('.parallax').parallax();
-  $('.modal-trigger').leanModal();
-
-  // Materialize scrollSpy
-  $('.scrollspy').scrollSpy();
 
   // Materialize tooltip
   $('.tooltipped').tooltip({
@@ -168,31 +133,7 @@ $(function() {
     });
   }
 
-  // Toggle Flow Text
-  var toggleFlowTextButton = $('#flow-toggle')
-  toggleFlowTextButton.click(function() {
-    $('#flow-text-demo').children('p').each(function() {
-      $(this).toggleClass('flow-text');
-    })
-  });
-  
-  
-  //Toggle Containers on page
-  var toggleContainersButton = $('#container-toggle-button');
-  toggleContainersButton.click(function() {
-    $('body .browser-window .container, .had-container').each(function() {
-      $(this).toggleClass('had-container');
-      $(this).toggleClass('container');
-      if ($(this).hasClass('container')) {
-        toggleContainersButton.text("Turn off Containers");
-      }
-      else {
-        toggleContainersButton.text("Turn on Containers");
-      }
-    });
-  });
-
-  // Detect touch screen and enable scrollbar if necessary
+    // Detect touch screen and enable scrollbar if necessary
   function is_touch_device() {
     try {
       document.createEvent("TouchEvent");
@@ -205,7 +146,7 @@ $(function() {
   if (is_touch_device()) {
     $('#nav-mobile').css({
       overflow: 'auto'
-    })
+    });
   }
 
   $.validator.setDefaults({
