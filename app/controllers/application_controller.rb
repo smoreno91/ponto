@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!, :only  => :dashboard
   before_action :non_authenticate_user!, :only  => [:home, :company_registration]
-  load_and_authorize_resource except: [:home, :company_registration, :dashboard, :check]
+  #load_and_authorize_resource except: [:home, :company_registration, :dashboard, :check]
   
   def home
     
