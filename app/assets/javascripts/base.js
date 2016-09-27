@@ -1,8 +1,11 @@
+/* global $ */
+/* global moment */
+
 $(function() {
 
   "use strict";
 
-  var window_width = $(window).width();
+  let window_width = $(window).width();
 
   /*Preloader*/
   $(window).load(function() {
@@ -14,17 +17,58 @@ $(function() {
   /*----------------------
   * Plugin initialization
   ------------------------*/
+  $.extend( true, $.fn.dataTable.defaults, {
+    lengthChange: false,
+    ordering:     false,
+    length:       false,
+    stateSave:    true,
+    //pagingType: "simple",
+    language: {
+      decimal:        "",
+      emptyTable:     "No hay datos disponibles en la tabla",
+      info:           "Mostrando _START_ a _END_ de _TOTAL_ registros",
+      infoEmpty:      "Mostrando 0 registros",
+      infoFiltered:   "(filtrado de _MAX_ registros)",
+      infoPostFix:    "",
+      thousands:      ",",
+      lengthMenu:     "Mostrar _MENU_ registros",
+      loadingRecords: "Cargando...",
+      processing:     "Procesando...",
+      search:         "Buscar",
+      zeroRecords:    "No se encontraron registros de acuerdo a la búsqueda",
+      paginate: {
+        first:      "Primero",
+        last:       "Último",
+        next:       "Siguiente",
+        previous:   "Anterior"
+      },
+      aria: {
+        sortAscending:  ": activar para organizar la columna ascendentemente",
+        sortDescending: ": activar para organizar la columna descendentemente"
+      }
+    }
+    
+  });
+  
+  $('#list-users').DataTable({
+    order: [[ 3, "asc" ]],
+  });
 
-  var liveDate = $('.live-date'),
+
+  let liveDate = $('.live-date'),
       liveTime = $('.live-time');
   function startTime() {
-    liveDate.html(moment().format("MMMM D, YYYY"));
-    liveTime.html(moment().format("hh:mm:ss A"));
+    if(liveDate.length){
+      liveDate.html(moment().format("MMMM D, YYYY"));
+    }
+    if(liveTime.length){
+      liveTime.html(moment().format("hh:mm:ss A"));
+    }
     setTimeout(function () {
-      startTime()
+      startTime();
     }, 1000);
   }
-  if(liveDate || liveTime){
+  if(liveDate.length || liveTime.length){
    startTime(); 
   }
 
@@ -72,14 +116,16 @@ $(function() {
     min: new Date(1900, 1, 1)
   });
 
+  $("select").material_select();
+
   // Perfect Scrollbar
   $('select').not('.disabled').material_select();
-  var leftnav = $(".page-topbar").height();  
-  var leftnavHeight = window.innerHeight - leftnav;
+  let leftnav = $(".page-topbar").height();  
+  let leftnavHeight = window.innerHeight - leftnav;
   $('.leftside-navigation').height(leftnavHeight).perfectScrollbar({
     suppressScrollX: true
   });
-  var righttnav = $("#chat-out").height();
+  let righttnav = $("#chat-out").height();
   $('.rightside-navigation').height(righttnav).perfectScrollbar({
     suppressScrollX: true
   });
@@ -183,4 +229,3 @@ $(function() {
 
 
 }); // end of document ready
-

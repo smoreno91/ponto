@@ -14,5 +14,7 @@ module PontoApp
     
     config.time_zone = 'Bogota'
     #config.active_record.default_timezone = :local
+    
+    config.i18n.default_locale = :'es'
   end
 end

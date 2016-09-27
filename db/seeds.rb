@@ -65,3 +65,35 @@
     )
 @entry2.user = @user2
 @entry2.save
+
+# Daniel => employee
+@user3 = User.new(
+    :email => 'daniel@gmail.com',
+    :password => '1q2w3e4r',
+    :password_confirmation => '1q2w3e4r',
+    :names => "Daniel",
+    :lastnames => "Restrepo",
+    :identification => "321654987",
+    :birth_date => Date.new(1992, 1, 5)
+    )
+@user3.skip_confirmation!
+@user3.company = @company
+@user3.save
+@user3.add_role "employee"
+@user3.save
+
+# Carolina => employee
+@user4 = User.new(
+    :email => 'carolina@gmail.com',
+    :password => '1q2w3e4r',
+    :password_confirmation => '1q2w3e4r',
+    :names => "Carolina",
+    :lastnames => "Moreno",
+    :identification => "41852963",
+    :birth_date => Date.new(1995, 9, 15)
+    )
+@user4.skip_confirmation!
+@user4.company = @company
+@user4.save
+@user4.add_role "employee"
+@user4.save
