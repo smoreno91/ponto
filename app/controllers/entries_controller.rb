@@ -4,14 +4,8 @@ class EntriesController < ApplicationController
   load_and_authorize_resource
 
   # GET /entries
-  # GET /entries.json
   def index
     @entries = Entry.all
-  end
-
-  # GET /entries/1
-  # GET /entries/1.json
-  def show
   end
 
   # GET /entries/new
@@ -19,12 +13,15 @@ class EntriesController < ApplicationController
     @entry = Entry.new
   end
 
+  # GET /entries/1
+  def show
+  end
+  
   # GET /entries/1/edit
   def edit
   end
 
   # POST /entries
-  # POST /entries.json
   def create
     @entry = Entry.new(entry_params)
 
@@ -40,7 +37,6 @@ class EntriesController < ApplicationController
   end
 
   # PATCH/PUT /entries/1
-  # PATCH/PUT /entries/1.json
   def update
     respond_to do |format|
       if @entry.update(entry_params)
@@ -54,7 +50,6 @@ class EntriesController < ApplicationController
   end
 
   # DELETE /entries/1
-  # DELETE /entries/1.json
   def destroy
     @entry.destroy
     respond_to do |format|

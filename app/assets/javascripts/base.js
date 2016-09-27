@@ -2,27 +2,26 @@
 /* global moment */
 
 $(function() {
-
   "use strict";
 
-  let window_width = $(window).width();
-
-  /*Preloader*/
+  /*-------------------------
+   * Preloader
+   *------------------------*/
   $(window).load(function() {
     setTimeout(function() {
       $('body').addClass('loaded');      
     }, 200);
   });  
   
-  /*----------------------
-  * Plugin initialization
-  ------------------------*/
+  /*-------------------------
+   * Override DataTable defaults
+   *------------------------*/
   $.extend( true, $.fn.dataTable.defaults, {
     lengthChange: false,
     ordering:     false,
     length:       false,
     stateSave:    true,
-    //pagingType: "simple",
+    pageLength:   15,
     language: {
       decimal:        "",
       emptyTable:     "No hay datos disponibles en la tabla",
@@ -50,28 +49,40 @@ $(function() {
     
   });
   
-  $('#list-users').DataTable({
+  /*-------------------------
+   * Init DataTable for users list
+   *------------------------*/
+  $('#users-list').DataTable({
+    order: [[ 3, "asc" ]],
+  });
+  
+  $('#admins-list').DataTable({
     order: [[ 3, "asc" ]],
   });
 
-
-  let liveDate = $('.live-date'),
-      liveTime = $('.live-time');
+  /*-------------------------
+   * Clock on check page
+   *------------------------*/
+  let liveDate = $('.live-date'), liveTime = $('.live-time');
   function startTime() {
-    if(liveDate.length){
+    if(liveDate){
       liveDate.html(moment().format("MMMM D, YYYY"));
     }
-    if(liveTime.length){
+    if(liveTime){
       liveTime.html(moment().format("hh:mm:ss A"));
     }
     setTimeout(function () {
       startTime();
     }, 1000);
   }
-  if(liveDate.length || liveTime.length){
-   startTime(); 
+  if(liveDate || liveTime){
+    startTime(); 
   }
-
+  
+  /*
+   * Code peding for organize
+   */
+   
   // Materialize Dropdown
   $('.dropdown-button').dropdown({
     inDuration: 300,

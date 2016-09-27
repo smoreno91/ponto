@@ -8,17 +8,18 @@ class UsersController < ApplicationController
     @users = User.with_role(:employee)
   end
   
+  # GET /admins
   def admins
     @users = User.with_role(:admin)
-  end
-
-  # GET /users/1
-  def show
   end
 
   # GET /users/new
   def new
     @user = User.new
+  end
+  
+  # GET /users/1
+  def show
   end
 
   # GET /users/1/edit
